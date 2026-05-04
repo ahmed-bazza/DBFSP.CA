@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Dr Bazza Function-Focused Stabilization Program: consultation and time-limited stabilization for mental health, addiction, chronic pain, and medication complexity in Alberta." />
+  <title>Dr Bazza Function-Focused Stabilization Program</title>
+  <style>
+    :root {
+      --ink: #121212;
+      --charcoal: #252525;
+      --muted: #66615c;
+      --cream: #f7f4ef;
+      --warm: #e8ded0;
+      --gold: #b89b5e;
+      --white: #ffffff;
+      --line: #ded6ca;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-weight: 500;
+      line-height: 1.15;
+      margin: 0 0 1rem;
+    }
+
+    h1 { font-size: clamp(2.5rem, 6vw, 5.5rem); letter-spacing: -0.04em; }
+    h2 { font-size: clamp(2rem, 4vw, 3.5rem); letter-spacing: -0.03em; }
+    h3 { font-size: 1.45rem; }
+
+    p { margin: 0 0 1rem; color: var(--charcoal); }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(247, 244, 239, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      padding: 1rem 0;
+    }
+
+    .brand {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.03em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.25rem;
+      font-size: 0.88rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a:hover { color: var(--ink); }
+
+    .hero {
+      padding: 7rem 0 5rem;
+      background:
+        linear-gradient(130deg, rgba(18,18,18,0.7), rgba(18,18,18,0.34)),
+        radial-gradient(circle at 80% 20%, rgba(184,155,94,0.35), transparent 35%),
+        #1d1b19;
+      color: var(--white);
+    }
+
+    .hero p { color: rgba(255,255,255,0.86); max-width: 780px; font-size: 1.25rem; }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+    }
+
+    .credentials {
+      margin: 2rem 0;
+      padding-left: 1.25rem;
+      border-left: 2px solid var(--gold);
+      color: rgba(255,255,255,0.9);
+    }
+
+    .credentials strong { display: block; font-family: Georgia, 'Times New Roman', serif; font-size: 1.4rem; margin-bottom: 0.3rem; }
+
+    .buttons { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
+
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 1.25rem;
+      border: 1px solid var(--gold);
+      background: var(--gold);
+      color: var(--ink);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+    }
+
+    .btn.secondary { background: transparent; color: var(--white); }
+    .btn.dark { background: var(--ink); color: var(--white); border-color: var(--ink); }
+
+    section { padding: 5rem 0; }
+
+    .trust {
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+      padding: 1.5rem 0;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+      font-size: 0.92rem;
+      color: var(--charcoal);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      padding: 1.5rem;
+      min-height: 180px;
+    }
+
+    .card ul, .two-col ul { margin: 0; padding-left: 1.15rem; }
+
+    .quote-band {
+      background: var(--ink);
+      color: var(--white);
+      text-align: center;
+      padding: 5rem 0;
+    }
+
+    .quote-band h2 { max-width: 920px; margin: 0 auto 1rem; }
+    .quote-band p { color: rgba(255,255,255,0.75); }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .checklist {
+      background: var(--white);
+      border: 1px solid var(--line);
+      padding: 1.5rem;
+    }
+
+    .checklist h3 { color: var(--ink); }
+    .checklist li { margin: 0.45rem 0; }
+
+    .services { background: var(--white); }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+      counter-reset: steps;
+    }
+
+    .step {
+      background: var(--cream);
+      border: 1px solid var(--line);
+      padding: 1.5rem;
+      position: relative;
+    }
+
+    .step::before {
+      counter-increment: steps;
+      content: counter(steps, decimal-leading-zero);
+      display: block;
+      color: var(--gold);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+    }
+
+    .referral {
+      background: linear-gradient(180deg, var(--cream), var(--warm));
+    }
+
+    .form-box {
+      background: var(--white);
+      border: 1px solid var(--line);
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    label { display: block; font-weight: 700; margin-bottom: 0.4rem; }
+    input, textarea, select {
+      width: 100%;
+      padding: 0.85rem;
+      border: 1px solid var(--line);
+      background: #fbfaf7;
+      font: inherit;
+    }
+    textarea { min-height: 120px; }
+
+    .notice {
+      border-left: 3px solid var(--gold);
+      background: rgba(184,155,94,0.08);
+      padding: 1rem 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    footer {
+      background: var(--ink);
+      color: var(--white);
+      padding: 3rem 0;
+    }
+    footer p { color: rgba(255,255,255,0.72); }
+
+    @media (max-width: 900px) {
+      .trust-grid, .card-grid, .process-steps, .split, .two-col, .form-row { grid-template-columns: 1fr; }
+      .hero { padding: 5rem 0 4rem; }
+      .nav-inner { align-items: flex-start; flex-direction: column; gap: 0.75rem; }
+      .nav-links { justify-content: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="#home" class="brand">Dr Bazza FSP</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="/refer/">Refer</a>
+        <a href="#patients">Patients</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header id="home" class="hero">
+    <div class="container">
+      <div class="eyebrow">Safety. Function. Stabilization. Shared Care.</div>
+      <h1>Structured Care for Complex Patients</h1>
+      <p>Consultation and time-limited stabilization for mental health, addiction, chronic pain, and medication complexity — focused on improving function and safety.</p>
+      <div class="credentials">
+        <strong>Dr Bazza, MD, CCFP</strong>
+        Family Physician (Focused Practice)<br />
+        Consultation &amp; Stabilization in Complex Care<br />
+        Function-Focused Mental Health, Addiction &amp; Chronic Pain
+      </div>
+      <div class="buttons">
+        <a class="btn" href="/refer/">Refer a Patient</a>
+        <a class="btn secondary" href="#about">Learn About the Program</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="trust" aria-label="Trust markers">
+    <div class="container trust-grid">
+      <div>Referral-Based Consultation</div>
+      <div>Time-Limited Stabilization</div>
+      <div>Shared Care Model</div>
+      <div>CPSA-Conscious Approach</div>
+      <div>Function-Focused Outcomes</div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container split">
+      <div>
+        <div class="eyebrow">About the Program</div>
+        <h2>A different approach to complex care</h2>
+      </div>
+      <div>
+        <p>The Function-Focused Stabilization Program is a structured, referral-based service designed to support patients with complex medical, behavioural, and medication-related needs.</p>
+        <p>Care is provided through a consultation and time-limited stabilization model. The program emphasizes function over symptom-only care, safety in prescribing decisions, clear communication with referring physicians, and a structured return-to-primary-care plan.</p>
+        <div class="notice"><strong>Signature clinical question:</strong><br />“What are you unable to do now that you want to be able to do?”</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote-band">
+    <div class="container">
+      <h2>Function + Risk + Behaviour</h2>
+      <p>Every care plan is individualized based on functional ability, safety risk, and behavioural or coping patterns affecting adherence and recovery.</p>
+    </div>
+  </section>
+
+  <section id="services" class="services">
+    <div class="container">
+      <div class="eyebrow">Clinical Services</div>
+      <h2>Focused areas of care</h2>
+      <div class="card-grid">
+        <article class="card">
+          <h3>Controlled Medication Complexity</h3>
+          <ul>
+            <li>Opioids</li>
+            <li>Benzodiazepines / Z-drugs</li>
+            <li>Polypharmacy</li>
+            <li>Taper planning</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Addiction &amp; OAT</h3>
+          <ul>
+            <li>OUD assessment</li>
+            <li>Buprenorphine/naloxone</li>
+            <li>Harm reduction</li>
+            <li>Stabilization planning</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Chronic Pain &amp; Functional Disorders</h3>
+          <ul>
+            <li>Fibromyalgia</li>
+            <li>IBS</li>
+            <li>Chronic fatigue</li>
+            <li>Somatic symptom presentations</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Mental Health Complexity</h3>
+          <ul>
+            <li>Anxiety and mood disorders</li>
+            <li>Trauma-related contributors</li>
+            <li>Functional impairment</li>
+            <li>Medication-related concerns</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Function Assessment</h3>
+          <ul>
+            <li>Sleep</li>
+            <li>Work/productivity</li>
+            <li>ADLs</li>
+            <li>Physical and social function</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Shared-Care Planning</h3>
+          <ul>
+            <li>Consultant reports</li>
+            <li>Monitoring recommendations</li>
+            <li>Return-to-care plan</li>
+            <li>Follow-up structure</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="container">
+      <div class="eyebrow">How It Works</div>
+      <h2>Structured, time-limited, shared care</h2>
+      <div class="process-steps">
+        <article class="step">
+          <h3>Referral</h3>
+          <p>A referral is received with a clear clinical question and relevant background information.</p>
+        </article>
+        <article class="step">
+          <h3>Initial Assessment</h3>
+          <p>Full medical, medication, function, safety, and behavioural pattern assessment.</p>
+        </article>
+        <article class="step">
+          <h3>Stabilization</h3>
+          <p>Structured follow-up, medication optimization, taper planning, OAT care, or functional recovery pathway as appropriate.</p>
+        </article>
+        <article class="step">
+          <h3>Transition</h3>
+          <p>Clear care plan and monitoring guidance are provided back to the referring physician.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="approach" class="services">
+    <div class="container split">
+      <div>
+        <div class="eyebrow">Safety &amp; Approach</div>
+        <h2>Clear boundaries support safer care</h2>
+      </div>
+      <div>
+        <p>This program is not a walk-in clinic, not a refill clinic, and not a replacement for primary care. It is a structured stabilization pathway designed to clarify risk, improve function, and support shared-care planning.</p>
+        <div class="two-col">
+          <div class="checklist">
+            <h3>This program provides</h3>
+            <ul>
+              <li>Consultation and structured stabilization</li>
+              <li>Function-focused care plans</li>
+              <li>Prescribing risk assessment</li>
+              <li>Shared-care recommendations</li>
+            </ul>
+          </div>
+          <div class="checklist">
+            <h3>This program does not provide</h3>
+            <ul>
+              <li>Automatic controlled medication continuation</li>
+              <li>Walk-in episodic care</li>
+              <li>Automatic prescribing takeover</li>
+              <li>Long-term primary care replacement</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="referral" class="referral">
+    <div class="container">
+      <div class="eyebrow">For Referring Physicians</div>
+      <h2>Refer a Patient</h2>
+      <p>Appropriate referrals include complex opioid or benzodiazepine use, polypharmacy concerns, OUD or substance use, chronic pain with functional impairment, and mental health concerns affecting function.</p>
+      <div class="form-box">
+        <h3>Referral Requirements</h3>
+        <div class="two-col">
+          <ul>
+            <li>Medication list</li>
+            <li>Relevant medical history</li>
+            <li>Specific referral question</li>
+            <li>Current prescriber and pharmacy</li>
+          </ul>
+          <ul>
+            <li>Relevant labs/imaging if available</li>
+            <li>Known safety concerns</li>
+            <li>Recent hospital or ED visits if relevant</li>
+            <li>Current supports involved</li>
+          </ul>
+        </div>
+        <div class="buttons">
+          <a class="btn dark" href="mailto:referrals@dbfsp.ca?subject=Referral%20to%20Function-Focused%20Stabilization%20Program">Email Referral Inquiry</a>
+          <a class="btn" href="/refer/">Open Referral Form</a>
+          <a class="btn secondary" href="/assets/forms/referral-form-fillable.pdf">Download Fillable PDF</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="patients">
+    <div class="container split">
+      <div>
+        <div class="eyebrow">For Patients</div>
+        <h2>Focused on daily function and safety</h2>
+      </div>
+      <div>
+        <p>This program is designed to help patients with complex medication use, mental health concerns, chronic pain, addiction, or functional symptoms improve daily function and safety.</p>
+        <p>The goal is not simply to reduce medications. The goal is to ensure treatment is safe, effective, and helping you live better.</p>
+        <div class="notice">This is a referral-based service. Patients should speak with their healthcare provider about whether referral is appropriate.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="services">
+    <div class="container split">
+      <div>
+        <div class="eyebrow">Contact</div>
+        <h2>Referral-based service</h2>
+      </div>
+      <div>
+        <p><strong>Clinic:</strong> Dr Bazza Function-Focused Stabilization Program</p>
+        <p><strong>Address:</strong> 12719 Victoria Trail NW, Edmonton, AB T5A 4J4</p>
+        <p><strong>Phone:</strong> 825-600-5902</p>
+        <p><strong>Fax:</strong> 825-600-5926</p>
+        <p><strong>Website:</strong> dbfsp.ca</p>
+        <p><strong>Email:</strong> referrals@dbfsp.ca</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <h3>Dr Bazza Function-Focused Stabilization Program</h3>
+      <p>Family Physician (Focused Practice) · Consultation &amp; Stabilization in Complex Care · Function-Focused Mental Health, Addiction &amp; Chronic Pain</p>
+      <p>Safety. Function. Stabilization. Shared Care.</p>
+    </div>
+  </footer>
+</body>
+</html>
